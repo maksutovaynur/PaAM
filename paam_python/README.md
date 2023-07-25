@@ -1,5 +1,13 @@
 # Эксперименты в Python
 
+
+## Описание экспериментов
+В каждом эксперименте генерируется звук определённых характеристик, а также рисуются спектры и волны на графиках.
+- Простая синусоида в 440 Гц [sine_440_mono.py](experiments/sine_440_mono.py)
+- Две синусоиды, моно [sine_440_660_mono.py](experiments/sine_440_660_mono.py)
+- Две синусоиды, стерео [sine_440_660_stereo.py](experiments/sine_440_660_stereo.py)
+- Тембрально окрашенный звук и эффект пропущенного основного тона [sine_440_timbre.py](experiments/sine_440_timbre.py)
+
 ## Подготовка к работе
 - Установите Python версии `3.10` любым удобным способом. 
 Например, можно установить пакет [miniconda3](https://conda.io/en/latest/miniconda.html)
@@ -18,7 +26,7 @@ poetry install
 pip install -r requirements.txt
 ```
 
-## Запуск скриптов
+## Запуск экспериментов
 ### Через Poetry
 ```bash
 poetry run python experiments/my_script_name.py
@@ -32,10 +40,3 @@ poetry run python experiments/sine_440_mono.py
 ```bash
 python experiments/sine_440_mono.py
 ```
-
-## Описание экспериментов
-В каждом эксперименте генерируется звук определённых характеристик, а также рисуются спектры и волны на графиках.
-- Простая синусоида в 440 Гц [sine_440_mono.py](experiments/sine_440_mono.py)
-- Две синусоиды, моно [sine_440_660_mono.py](experiments/sine_440_660_mono.py)
-- Две синусоиды, стерео [sine_440_660_stereo.py](experiments/sine_440_660_stereo.py)
-- Тембрально окрашенный звук и эффект пропущенного основного тона [sine_440_timbre.py](experiments/sine_440_timbre.py)
