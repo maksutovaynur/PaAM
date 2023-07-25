@@ -13,10 +13,10 @@ from paam_python.graphics import draw_spectre, draw_waves
 from paam_python.player import play_mono
 
 sampling_rate = 44100
-volume = 0.5
+volume = 0.2
 
-base_tone = (220, 12)
-harmonics = [(440, 8), (660, 6), (880, 4), (1100, 2), (1320, 1)]
+base_tone = (220, 6)
+harmonics = [(440, 4), (660, 3), (880, 2)]
 
 wave_timbre = generate_multiple_sines(
     [base_tone] + harmonics,
@@ -25,11 +25,11 @@ wave_timbre_skipped_base = generate_multiple_sines(
     harmonics,
     duration=1.5, slope_at_start=0.1, slope_at_end=0.1, sampling_rate=sampling_rate)
 
-draw_spectre(([base_tone], 'Базовый тон'), (harmonics, 'Гармоники'))
-draw_waves((wave_timbre, 'База + гармоники'), (wave_timbre_skipped_base, 'Только гармоники'))
-
 play_mono(volume * wave_timbre)
 
 sleep(1)
 
 play_mono(volume * wave_timbre_skipped_base)
+
+draw_spectre(([base_tone], 'Базовый тон'), (harmonics, 'Гармоники'), wait=False)
+draw_waves((wave_timbre, 'База + гармоники'), (wave_timbre_skipped_base, 'Только гармоники'))
